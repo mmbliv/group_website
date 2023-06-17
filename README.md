@@ -4,7 +4,7 @@ Source code of the Wen Group Website.
 
 ## Add your profile
 
-Create a Markdown file with
+Create a Markdown file with in the corresponding directory
 
 ## Run locally
 
@@ -13,3 +13,4 @@ cd group_website
 npm install
 npm run start
 ```
+
