@@ -1,11 +1,11 @@
-import React from "react"
-import { FaGithubSquare } from "react-icons/fa"
-import { GrDocument } from "react-icons/gr"
-import { Link } from "gatsby"
-import { SubtitleIcon } from "./SubtitleIcon"
-import { useStaticQuery, graphql } from "gatsby"
-import { SubtitleIconSvg } from "./SubtitleIconSvg"
-import ReactMarkdown from "react-markdown"
+import React from "react";
+import { FaGithubSquare } from "react-icons/fa";
+import { GrDocument } from "react-icons/gr";
+import { Link } from "gatsby";
+import { SubtitleIcon } from "./SubtitleIcon";
+import { useStaticQuery, graphql } from "gatsby";
+import { SubtitleIconSvg } from "./SubtitleIconSvg";
+import ReactMarkdown from "react-markdown";
 const query = graphql`
   {
     file(name: { eq: "code" }) {
@@ -16,10 +16,10 @@ const query = graphql`
       publicURL
     }
   }
-`
+`;
 
 export const Code = ({ codes, showLink, showGrid }) => {
-  const data = useStaticQuery(query)
+  const data = useStaticQuery(query);
 
   return (
     <div id="codes" className="w-full pt-12 mb-32">
@@ -40,7 +40,7 @@ export const Code = ({ codes, showLink, showGrid }) => {
             : "px-14 grid grid-cols-1 sm:grid-cols-2 gap-16"
         }`}
       >
-        {codes.map(item => {
+        {codes.map((item) => {
           return (
             <li
               key={item.id}
@@ -70,9 +70,9 @@ export const Code = ({ codes, showLink, showGrid }) => {
                 <p className="pl-3 ">Documentation</p>
               </a>
             </li>
-          )
+          );
         })}
       </ul>
     </div>
-  )
-}
+  );
+};
