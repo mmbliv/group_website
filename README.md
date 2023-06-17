@@ -1,4 +1,4 @@
-# Wen Group Website
+# Group Website
 
 Source code of the Wen Group Website.
 
