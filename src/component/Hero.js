@@ -1,31 +1,28 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const query = graphql`
   {
-    allFile(filter: { relativeDirectory: { eq: "img/hero_img" } }) {
-      nodes {
-        relativePath
-        extension
-        publicURL
-        childImageSharp {
-          gatsbyImageData
-        }
+    file(name: { eq: "hero" }) {
+      childrenImageSharp {
+        gatsbyImageData
       }
+      extension
+      publicURL
     }
   }
-`
+`;
 
 export const Header = () => {
-  const data = useStaticQuery(query)
-  const {
-    allFile: { nodes: hero },
-  } = data
+  const data = useStaticQuery(query);
+  // const {
+  //   allFile: { nodes: hero },
+  // } = data;
   return (
     <div className="mt-11 w-full ">
       <GatsbyImage
-        image={hero[0].childImageSharp.gatsbyImageData}
+        image={data.file.childrenImageSharp[0].gatsbyImageData}
         alt="wengroup"
         className="object-cover w-full h-60 opacity-50 block mx-auto"
       />
@@ -39,5 +36,5 @@ export const Header = () => {
         </p>
       </div>
     </div>
-  )
-}
+  );
+};

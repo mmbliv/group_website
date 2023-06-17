@@ -1,14 +1,14 @@
-import React from "react"
-import Layout from "../component/Layout"
-import { New } from "../component/New"
-import { Code } from "../component/Code"
-import { Aboutme } from "../component/Aboutme"
-import { Research } from "../component/Research"
-import { graphql } from "gatsby"
-import PeopleCards from "../component/PeopleCards"
-import Seo from "../component/Seo"
-import { Position } from "../component/Position"
-import { convertHtmlToArray } from "../utils/convertHtmlToArray"
+import React from "react";
+import Layout from "../component/Layout";
+import { New } from "../component/New";
+import { Code } from "../component/Code";
+import { Aboutme } from "../component/Aboutme";
+import { Research } from "../component/Research";
+import { graphql } from "gatsby";
+import PeopleCards from "../component/PeopleCards";
+import Seo from "../component/Seo";
+import { Position } from "../component/Position";
+import { convertHtmlToArray } from "../utils/convertHtmlToArray";
 
 const Home = ({ data }) => {
   // const {
@@ -19,11 +19,11 @@ const Home = ({ data }) => {
   //   allStrapiPi: { nodes: pi },
   //   allStrapiPositions: { nodes: positions },
   // } = data
-  const researchData = data.researchData.nodes
-  const newsData = data.newsData.nodes
-  const codeData = data.codeData.nodes
-  const positionData = data.positionData.nodes
-  const newsArray = convertHtmlToArray(newsData[0].html)
+  const researchData = data.researchData.nodes;
+  const newsData = data.newsData.nodes;
+  const codeData = data.codeData.nodes;
+  const positionData = data.positionData.nodes;
+  const newsArray = convertHtmlToArray(newsData[0].html);
   return (
     <Layout>
       <Seo />
@@ -37,8 +37,8 @@ const Home = ({ data }) => {
       <Code codes={codeData} />
       <Position positions={positionData} />
     </Layout>
-  )
-}
+  );
+};
 export const query = graphql`
   {
     newsData: allMarkdownRemark(
@@ -50,7 +50,7 @@ export const query = graphql`
       }
     }
     codeData: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/content_data/code/.*/" } }
+      filter: { fileAbsolutePath: { regex: "/content_data/codes/.*/" } }
     ) {
       nodes {
         id
@@ -86,6 +86,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default Home
+export default Home;

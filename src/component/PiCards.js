@@ -1,6 +1,6 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import PeopleCardTest from "./PeopleCard"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import PeopleCardTest from "./PeopleCard";
 const query = graphql`
   {
     allMarkdownRemark(
@@ -15,6 +15,7 @@ const query = graphql`
           date
           photo
           description
+          title
         }
         id
       }
@@ -30,14 +31,14 @@ const query = graphql`
       }
     }
   }
-`
+`;
 
 const PiCards = () => {
-  const data = useStaticQuery(query)
+  const data = useStaticQuery(query);
   const {
     allMarkdownRemark: { nodes: PI },
     allFile: { nodes: photo },
-  } = data
+  } = data;
   if (PI.length)
     return (
       <div>
@@ -45,18 +46,18 @@ const PiCards = () => {
           Principal Investigator
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 p-11 pt-5">
-          {PI.map(p => {
+          {PI.map((p) => {
             return (
               <div key={p.id}>
                 {/* <PeopleCard people={graduate} /> */}
                 <PeopleCardTest people={p} img={photo} pi />
               </div>
-            )
+            );
           })}
         </div>
       </div>
-    )
-  else return null
-}
+    );
+  else return null;
+};
 
-export default PiCards
+export default PiCards;

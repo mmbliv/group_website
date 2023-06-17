@@ -1,8 +1,7 @@
-import React from "react"
-import { GatsbyImage } from "gatsby-plugin-image"
+import React from "react";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const ResearchCard = ({ item, imgs }) => {
-  console.log(item)
   return (
     <div key={item.id} className="pb-6 w-full">
       <p className="subTitle pb-4" id={item.frontmatter.title}>
@@ -13,7 +12,7 @@ const ResearchCard = ({ item, imgs }) => {
         <div dangerouslySetInnerHTML={{ __html: item.html }} />
       </p>
       <div className="sm:mx-0  sm:pb-0 text-center">
-        {imgs.map(p => {
+        {imgs.map((p) => {
           if (p.relativePath === item.frontmatter.img) {
             return (
               <GatsbyImage
@@ -21,15 +20,15 @@ const ResearchCard = ({ item, imgs }) => {
                 alt={item.frontmatter.title}
                 className="w-1/2"
               />
-            )
+            );
           } else {
-            return null
+            return null;
           }
         })}
       </div>
       <hr />
     </div>
-  )
-}
+  );
+};
 
-export default ResearchCard
+export default ResearchCard;
