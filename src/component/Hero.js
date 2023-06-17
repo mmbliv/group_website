@@ -1,10 +1,10 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const query = graphql`
   {
-    allFile(filter: { relativeDirectory: { eq: "img/hero_img" } }) {
+    allFile(filter: { relativeDirectory: { eq: "img" } }) {
       nodes {
         relativePath
         extension
@@ -15,13 +15,13 @@ const query = graphql`
       }
     }
   }
-`
+`;
 
 export const Header = () => {
-  const data = useStaticQuery(query)
+  const data = useStaticQuery(query);
   const {
     allFile: { nodes: hero },
-  } = data
+  } = data;
   return (
     <div className="mt-11 w-full ">
       <GatsbyImage
@@ -39,5 +39,5 @@ export const Header = () => {
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
