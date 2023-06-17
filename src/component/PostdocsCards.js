@@ -5,7 +5,7 @@ const query = graphql`
   {
     allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/content_data/people/postdoc/.*/" }
+        fileAbsolutePath: { regex: "/content_data/people/postdocs/.*/" }
       }
       sort: { fields: frontmatter___date, order: ASC }
     ) {
@@ -20,7 +20,9 @@ const query = graphql`
         id
       }
     }
-    allFile(filter: { relativeDirectory: { eq: "peopel/postdoc/photo" } }) {
+    allFile(
+      filter: { relativeDirectory: { eq: "people/postdocs/photo" } }
+    ) {
       nodes {
         relativePath
         extension
@@ -33,7 +35,7 @@ const query = graphql`
   }
 `;
 
-const PostdocCards = () => {
+const PostdocsCards = () => {
   const data = useStaticQuery(query);
   const {
     allMarkdownRemark: { nodes: postdoc },
@@ -43,7 +45,7 @@ const PostdocCards = () => {
     return (
       <div>
         <h2 className="text-center sm:text-left people-title sm:pl-11 ">
-          Postdoc
+          Postdocs
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 p-11 pt-5">
           {postdoc.map((p) => {
@@ -60,4 +62,4 @@ const PostdocCards = () => {
   else return null;
 };
 
-export default PostdocCards;
+export default PostdocsCards;

@@ -20,7 +20,9 @@ const query = graphql`
         id
       }
     }
-    allFile(filter: { relativeDirectory: { eq: "people/graduates/photo" } }) {
+    allFile(
+      filter: { relativeDirectory: { eq: "people/graduates/photo" } }
+    ) {
       nodes {
         relativePath
         extension
@@ -39,7 +41,6 @@ const GraduatesCards = () => {
     allMarkdownRemark: { nodes: graduates },
     allFile: { nodes: photo },
   } = data;
-  console.log(graduates);
   if (graduates.length)
     return (
       <div>
@@ -47,11 +48,11 @@ const GraduatesCards = () => {
           Graduate Students
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 p-11 pt-5">
-          {graduates.map((graduate) => {
+          {graduates.map((p) => {
             return (
-              <div key={graduate.id}>
+              <div key={p.id}>
                 {/* <PeopleCard people={graduate} /> */}
-                <PeopleCardTest people={graduate} img={photo} />
+                <PeopleCardTest people={p} img={photo} />
               </div>
             );
           })}
