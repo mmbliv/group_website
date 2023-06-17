@@ -4,7 +4,7 @@ Welcome, Heer and Bobby, as summer research undergraduates joining the group.
 
 # January 18th, 2023
 
-Our new Perspective discussing "Chemical Reaction Networks and Opportunities for Machine Learning" appeared in _Nature Computational Science_.
+Our new Perspective discussing "Chemical Reaction Networks and Opportunities for Machine Learning" appeared in _Nature Computational Science_. https://doi.org/10.1038/s43588-022-00369-z
 
 # December 23rd, 2022
 
