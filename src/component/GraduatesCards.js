@@ -20,7 +20,9 @@ const query = graphql`
         id
       }
     }
-    allFile(filter: { relativeDirectory: { eq: "people/graduates/photo" } }) {
+    allFile(
+      filter: { relativeDirectory: { eq: "people/graduates/photo" } }
+    ) {
       nodes {
         relativePath
         extension
@@ -39,7 +41,6 @@ const GraduatesCards = () => {
     allMarkdownRemark: { nodes: graduates },
     allFile: { nodes: photo },
   } = data;
-  console.log(graduates);
   if (graduates.length)
     return (
       <div>

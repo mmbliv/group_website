@@ -20,7 +20,7 @@ const query = graphql`
         id
       }
     }
-    allFile(filter: { relativeDirectory: { eq: "peopel/postdoc/photo" } }) {
+    allFile(filter: { relativeDirectory: { eq: "people/postdoc/photo" } }) {
       nodes {
         relativePath
         extension
