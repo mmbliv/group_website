@@ -1,6 +1,6 @@
 ---
 title: High-throughput Materials Discovery
-img: img/research_img/r_3.png
+img: img/research_img/materials_workflow.png
 ---
 
 Quantum chemical theory and computations are powerful tools for understanding and designing materials. Conventional approaches that manually perform the calculations are difficult to manage complex materials science workflows and difficult to fully utilize modern high-performance computing resources.<br><br>

@@ -1,6 +1,6 @@
 ---
 title: Machine Learning Chemical Reactions
-img: img/research_img/r_1.png
+img: img/research_img/gnn_reaction.png
 ---
 
 Machine learning methods, especially deep learning, have significantly expanded a chemist's toolbox, enabling the construction of quantitatively predictive models directly from data. These models make it possible to explore the gigantic chemical space to make chemical discoveries.<br><br>
