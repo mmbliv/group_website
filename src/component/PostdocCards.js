@@ -1,6 +1,6 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import PeopleCardTest from "./PeopleCard"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import PeopleCardTest from "./PeopleCard";
 const query = graphql`
   {
     allMarkdownRemark(
@@ -31,14 +31,14 @@ const query = graphql`
       }
     }
   }
-`
+`;
 
 const PostdocCards = () => {
-  const data = useStaticQuery(query)
+  const data = useStaticQuery(query);
   const {
     allMarkdownRemark: { nodes: postdoc },
     allFile: { nodes: photo },
-  } = data
+  } = data;
   if (postdoc.length)
     return (
       <div>
@@ -46,18 +46,18 @@ const PostdocCards = () => {
           Postdoc
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 p-11 pt-5">
-          {postdoc.map(p => {
+          {postdoc.map((p) => {
             return (
               <div key={p.id}>
                 {/* <PeopleCard people={graduate} /> */}
-                <PeopleCardTest people={postdoc} img={photo} />
+                <PeopleCardTest people={p} img={photo} />
               </div>
-            )
+            );
           })}
         </div>
       </div>
-    )
-  else return null
-}
+    );
+  else return null;
+};
 
-export default PostdocCards
+export default PostdocCards;

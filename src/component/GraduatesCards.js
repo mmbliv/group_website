@@ -39,6 +39,7 @@ const GraduatesCards = () => {
     allMarkdownRemark: { nodes: graduates },
     allFile: { nodes: photo },
   } = data;
+  console.log(graduates);
   if (graduates.length)
     return (
       <div>

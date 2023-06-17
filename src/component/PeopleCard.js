@@ -25,7 +25,7 @@ const PeopleCardTest = ({ people, img, pi }) => {
                 return (
                   <GatsbyImage
                     image={p.childImageSharp.gatsbyImageData}
-                    alt={name}
+                    alt={frontmatter.name}
                     className="h-32 w-32 headshot sm:mr-4 "
                   />
                 );
