@@ -11,7 +11,7 @@ const query = graphql`
   }
 `;
 const PeopleCardTest = ({ people, img, pi }) => {
-  const { name, website, frontmatter } = people;
+  const { frontmatter } = people;
   // console.log(img)
   // console.log(description)
   const data = useStaticQuery(query);
@@ -44,7 +44,7 @@ const PeopleCardTest = ({ people, img, pi }) => {
             {pi && <p className="w-max">{frontmatter.title}</p>}
             {/* <p className="w-max">{title}</p> */}
             <p className="text-slate-800">{frontmatter.Email}</p>
-            <p>{website}</p>
+            {/* <p>{website}</p> */}
 
             {pi && (
               <p className="markdown">
