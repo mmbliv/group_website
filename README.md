@@ -30,11 +30,3 @@ For steps 1 and 3, see the Dev Tools section in the [Group Manual](https://wengr
   See existing files for examples.
 
 ### 3. Make a pull request
-
-## Run locally
-
-```shell
-cd group_website
-npm install
-npm run start
-```
