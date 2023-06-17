@@ -1,6 +1,6 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { Publication } from "./Publication"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import { Publication } from "./Publication";
 const query = graphql`
   {
     allMarkdownRemark(
@@ -12,13 +12,13 @@ const query = graphql`
       }
     }
   }
-`
+`;
 
 export const Aboutme = () => {
-  const data = useStaticQuery(query)
+  const data = useStaticQuery(query);
   const {
     allMarkdownRemark: { nodes: about },
-  } = data
+  } = data;
 
   return (
     <article id="about" className="sm:col-span-2 pt-16">
@@ -34,5 +34,5 @@ export const Aboutme = () => {
       {/* this is the publication div */}
       <Publication />
     </article>
-  )
-}
+  );
+};

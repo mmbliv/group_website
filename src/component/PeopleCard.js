@@ -48,7 +48,9 @@ const PeopleCardTest = ({ people, img, pi }) => {
 
             {pi && (
               <p className="markdown">
-                <a href={data.file.publicURL}>CV</a>
+                <a href={data.file.publicURL} target="_blank">
+                  CV
+                </a>
               </p>
             )}
           </div>
