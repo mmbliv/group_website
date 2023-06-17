@@ -4,7 +4,7 @@ import { SubtitleIcon } from "./SubtitleIcon"
 import { SubtitleIconSvg } from "./SubtitleIconSvg"
 import GraduatesCards from "./GraduatesCards"
 import PiCards from "./PiCards"
-import PostdocCards from "./PostdocCards"
+import PostdocsCards from "./PostdocsCards"
 import UndergraduatesCards from "./UndergraduatesCards"
 const query = graphql`
   {
@@ -33,7 +33,7 @@ const PeopleCards = () => {
         </div>
       </>
       <PiCards />
-      <PostdocCards />
+      <PostdocsCards />
       <GraduatesCards />
       <UndergraduatesCards />
     </div>

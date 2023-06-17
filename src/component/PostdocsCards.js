@@ -35,7 +35,7 @@ const query = graphql`
   }
 `;
 
-const PostdocCards = () => {
+const PostdocsCards = () => {
   const data = useStaticQuery(query);
   const {
     allMarkdownRemark: { nodes: postdoc },
@@ -62,4 +62,4 @@ const PostdocCards = () => {
   else return null;
 };
 
-export default PostdocCards;
+export default PostdocsCards;
