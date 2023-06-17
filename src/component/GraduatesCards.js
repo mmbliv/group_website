@@ -1,6 +1,6 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import PeopleCardTest from "./PeopleCard"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import PeopleCardTest from "./PeopleCard";
 const query = graphql`
   {
     allMarkdownRemark(
@@ -31,15 +31,14 @@ const query = graphql`
       }
     }
   }
-`
+`;
 
 const GraduatesCards = () => {
-  const data = useStaticQuery(query)
+  const data = useStaticQuery(query);
   const {
     allMarkdownRemark: { nodes: graduates },
     allFile: { nodes: photo },
-  } = data
-  console.log(photo)
+  } = data;
   if (graduates.length)
     return (
       <div>
@@ -47,18 +46,18 @@ const GraduatesCards = () => {
           Graduate Students
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 p-11 pt-5">
-          {graduates.map(graduate => {
+          {graduates.map((graduate) => {
             return (
               <div key={graduate.id}>
                 {/* <PeopleCard people={graduate} /> */}
                 <PeopleCardTest people={graduate} img={photo} />
               </div>
-            )
+            );
           })}
         </div>
       </div>
-    )
-  else return null
-}
+    );
+  else return null;
+};
 
-export default GraduatesCards
+export default GraduatesCards;
