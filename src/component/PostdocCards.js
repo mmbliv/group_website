@@ -5,7 +5,7 @@ const query = graphql`
   {
     allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/content_data/people/postdoc/.*/" }
+        fileAbsolutePath: { regex: "/content_data/people/postdocs/.*/" }
       }
       sort: { fields: frontmatter___date, order: ASC }
     ) {
@@ -20,7 +20,9 @@ const query = graphql`
         id
       }
     }
-    allFile(filter: { relativeDirectory: { eq: "people/postdoc/photo" } }) {
+    allFile(
+      filter: { relativeDirectory: { eq: "people/postdocs/photo" } }
+    ) {
       nodes {
         relativePath
         extension
