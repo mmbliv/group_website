@@ -1,10 +1,24 @@
-import React from "react"
-import { AnchorLink } from "gatsby-plugin-anchor-links"
-import { Link } from "gatsby"
-import ReactMarkdown from "react-markdown"
-import { Manual } from "./Manual"
+import React from "react";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+import { Link } from "gatsby";
+import ReactMarkdown from "react-markdown";
+import { Manual } from "./Manual";
+import { useStaticQuery, graphql } from "gatsby";
+
+const query = graphql`
+  {
+    file(name: { eq: "News" }) {
+      childrenImageSharp {
+        gatsbyImageData
+      }
+      extension
+      publicURL
+    }
+  }
+`;
 
 export const New = ({ news, showGrid }) => {
+  const data = useStaticQuery(query);
   return (
     <div
       id="news"
@@ -16,12 +30,13 @@ export const New = ({ news, showGrid }) => {
     >
       <div className=" w-14 h-14 mx-auto mb-2">
         <Link to="/News">
-          <img src="icon/News.svg" alt="news" />
+          {/* <GatsbyImage image={data.file.childrenImageSharp} alt="news" /> */}
+          <img src={data.file.publicURL} alt="news" />
         </Link>
         <hr />
       </div>
       <div className={`${!showGrid && "overflow-scroll h-128 p-4"}`}>
-        {news.map(item => {
+        {news.map((item) => {
           if (!showGrid) {
             return (
               <AnchorLink to={`/News#${item.id}`} key={item.id}>
@@ -45,7 +60,7 @@ export const New = ({ news, showGrid }) => {
                   <hr />
                 </ul>
               </AnchorLink>
-            )
+            );
           }
           return (
             <ul className=" mb-5">
@@ -67,10 +82,10 @@ export const New = ({ news, showGrid }) => {
               </li>
               <hr />
             </ul>
-          )
+          );
         })}
       </div>
       {!showGrid && <Manual />}
     </div>
-  )
-}
+  );
+};
