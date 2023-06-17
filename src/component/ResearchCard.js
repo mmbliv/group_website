@@ -18,7 +18,7 @@ const ResearchCard = ({ item, imgs }) => {
               <GatsbyImage
                 image={p.childImageSharp.gatsbyImageData}
                 alt={item.frontmatter.title}
-                className="w-1/2"
+                className="w-1/2 mb-4"
               />
             );
           } else {
