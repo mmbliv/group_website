@@ -43,7 +43,7 @@ const PostdocCards = () => {
     return (
       <div>
         <h2 className="text-center sm:text-left people-title sm:pl-11 ">
-          Postdoc
+          Postdocs
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 p-11 pt-5">
           {postdoc.map((p) => {
