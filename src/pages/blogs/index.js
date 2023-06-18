@@ -1,14 +1,13 @@
-import React from "react"
-import { Grid } from "@material-ui/core"
-import BlogCard from "../../component/BlogCard"
-import Layout from "../../component/Layout"
-import { graphql } from "gatsby"
+import React from "react";
+import { Grid } from "@material-ui/core";
+import BlogCard from "../../component/BlogCard";
+import Layout from "../../component/Layout";
+import { graphql } from "gatsby";
 
 const Blogs = ({ data }) => {
   const {
     allMarkdownRemark: { nodes: blogs },
-  } = data
-
+  } = data;
   return (
     <Layout>
       <Grid
@@ -17,17 +16,17 @@ const Blogs = ({ data }) => {
         alignItems="baseline"
         style={{ padding: "2rem", paddingBottom: "6rem" }}
       >
-        {blogs.map(blog => {
+        {blogs.map((blog) => {
           return (
             <Grid item key={blog.id} sm={4}>
               <BlogCard blog={blog} />
             </Grid>
-          )
+          );
         })}
       </Grid>
     </Layout>
-  )
-}
+  );
+};
 export const query = graphql`
   {
     allMarkdownRemark(
@@ -51,5 +50,5 @@ export const query = graphql`
       }
     }
   }
-`
-export default Blogs
+`;
+export default Blogs;

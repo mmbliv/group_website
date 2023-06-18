@@ -1,14 +1,13 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../../component/Layout"
-import "../../css/blog.css"
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../../component/Layout";
+import "../../css/blog.css";
 
 const BlogTemplate = ({ data }) => {
   const {
     allMarkdownRemark: { nodes },
-  } = data
-  const { html, frontmatter } = nodes[0]
-
+  } = data;
+  const { html, frontmatter } = nodes[0];
   return (
     <Layout>
       <div className="w-full mb-16 px-8">
@@ -17,13 +16,14 @@ const BlogTemplate = ({ data }) => {
           <h1 className="text-right">{frontmatter.date}</h1>
           <hr />
           <ul>
-            {frontmatter.stack.map((i, index) => {
-              return (
-                <li key={index} className="stack mr-2">
-                  {i}
-                </li>
-              )
-            })}
+            {frontmatter.stack &&
+              frontmatter.stack.map((i, index) => {
+                return (
+                  <li key={index} className="stack mr-2">
+                    {i}
+                  </li>
+                );
+              })}
           </ul>
           {/* <h1 className="subTitle flex flex-row gap-6">{frontmatter.stack}</h1> */}
           <div className="markdown-body">
@@ -32,8 +32,8 @@ const BlogTemplate = ({ data }) => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 export const query = graphql`
   query getSingleBolg($frontmatter__slug: String) {
     allMarkdownRemark(
@@ -55,5 +55,5 @@ export const query = graphql`
       }
     }
   }
-`
-export default BlogTemplate
+`;
+export default BlogTemplate;

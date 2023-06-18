@@ -1,16 +1,17 @@
-import React from "react"
-import { Card } from "@material-ui/core"
-import { Avatar, CardContent, CardHeader, Typography } from "@material-ui/core"
-import { Link } from "gatsby"
+import React from "react";
+import { Card } from "@material-ui/core";
+import { Avatar, CardContent, CardHeader, Typography } from "@material-ui/core";
+import { Link } from "gatsby";
 
 function randomColor() {
-  let hex = Math.floor(Math.random() * 0xffffff)
-  let color = "#" + hex.toString(16)
+  let hex = Math.floor(Math.random() * 0xffffff);
+  let color = "#" + hex.toString(16);
 
-  return color
+  return color;
 }
 
 const BlogCard = ({ blog }) => {
+  console.log(blog);
   return (
     <Link to={`/blogs/${blog.frontmatter.slug}`}>
       <Card style={{ backgroundColor: "rgb(241 245 249)" }}>
@@ -36,6 +37,6 @@ const BlogCard = ({ blog }) => {
         </CardContent>
       </Card>
     </Link>
-  )
-}
-export default BlogCard
+  );
+};
+export default BlogCard;
