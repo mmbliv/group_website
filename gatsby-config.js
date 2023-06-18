@@ -10,6 +10,9 @@ module.exports = {
     description: "This is a WebDev portfolio site",
     author: "Min He",
   },
+  flags: {
+    DEV_SSR: true,
+  },
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
@@ -17,6 +20,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-anchor-links`,
+    `gatsby-plugin-postcss`,
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {
@@ -153,4 +157,4 @@ module.exports = {
       },
     },
   ],
-}
+};
